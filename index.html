@@ -6,6 +6,12 @@
 <title>Muhammad Raacikh Asghar — Product Operations & Fintech</title>
 <meta name="description" content="Fast-paced fintech operator. Scaled a neobank to 4M users, launched card programmes across Pakistan and the UK, now operating in Web3 at ZAR — backed by a16z, Coinbase, and Dragonfly.">
 <meta property="og:title" content="Muhammad Raacikh Asghar — Product Operations & Fintech">
+<!-- og:image: add your domain once deployed e.g. https://yourdomain.com/og.png -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://raacikhasghar.com">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Muhammad Raacikh Asghar — Product Operations & Fintech">
+<meta name="twitter:description" content="Fast-paced fintech operator. Scaled a neobank to 4M users, launched card programmes across two countries, now operating in Web3.">
 <meta property="og:description" content="Fast-paced fintech operator. $3M in cost saves, 40K waitlist, 4M users. Open to remote roles.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23E8442A'/><text y='.9em' font-size='60' x='50' text-anchor='middle' fill='white' font-family='serif' font-style='italic'>R</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +31,6 @@
   --coral2:    #D63B22;
   --coral3:    #F05540;
   --coraldim:  rgba(232,68,42,.08);
-  --coralsoft: rgba(232,68,42,.18);
   --text:      #1A1612;
   --muted:     #6B6560;
   --dim:       #B8B2AA;
@@ -52,7 +57,7 @@ body.hovering #cursor { width: 14px; height: 14px; }
 body.hovering #cursor-ring { width: 48px; height: 48px; opacity: .15; }
 
 /* PROGRESS */
-#progress { position: fixed; top: 0; left: 0; height: 2px; background: var(--coral2); z-index: 9997; width: 0%; transition: width .1s; }
+#progress { position: fixed; top: 0; left: 0; height: 2px; background: var(--coral2); z-index: 9997; width: 0%; transition: width .15s ease; opacity: 0; }
 
 /* NAV */
 header { position: sticky; top: 0; z-index: 100; background: rgba(245,240,232,.96); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
@@ -70,7 +75,7 @@ nav { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; height: 52px; displa
 /* ═══════════════════════════════
    HERO
 ═══════════════════════════════ */
-.hero { padding: 5.5rem 0 3rem; border-bottom: 1px solid var(--border); }
+.hero { padding: 2.5rem 0 3rem; border-bottom: 1px solid var(--border); }
 
 /* Top row: eyebrow + status */
 .hero-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem; }
@@ -81,11 +86,11 @@ nav { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; height: 52px; displa
 @keyframes pulse-dot { 0%,100%{box-shadow:0 0 0 0 rgba(45,122,79,.35)}50%{box-shadow:0 0 0 5px rgba(45,122,79,0)} }
 
 /* Name */
-.hero-name { font-family: var(--serif); font-weight: 400; letter-spacing: -.03em; margin-bottom: 2rem; }
-.name-first { display: block; font-size: clamp(1.4rem,3vw,2.2rem); color: var(--muted); line-height: 1.2; font-style: normal; letter-spacing: .02em; }
-.name-main { display: block; font-size: clamp(4.5rem,10vw,8rem); font-style: italic; color: var(--text); line-height: .92; }
 
-.name-last { display: block; font-size: clamp(2rem,4.5vw,3.5rem); color: var(--muted); line-height: 1.1; letter-spacing: .02em; font-style: normal; font-weight: 400; }
+
+
+
+
 
 /* HERO CARDS GRID */
 .hero-cards { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: .75rem; margin-bottom: 2rem; }
@@ -127,7 +132,7 @@ nav { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; height: 52px; displa
 .ticker-label { font-size: .68rem; font-weight: 700; color: var(--coral); letter-spacing: .14em; text-transform: uppercase; display: flex; align-items: center; gap: .5rem; margin-bottom: .85rem; }
 .ticker-label::before { content: ''; display: inline-block; width: 14px; height: 2px; background: var(--coral); border-radius: 2px; }
 .ticker-row { overflow: hidden; }
-.ticker-track { display: flex; gap: 2.5rem; white-space: nowrap; animation: ticker 28s linear infinite; }
+.ticker-track { display: flex; gap: 2.5rem; white-space: nowrap; animation: ticker 18s linear infinite; }
 .ticker-item { font-size: .75rem; color: var(--dim); font-weight: 400; letter-spacing: .03em; }
 .ticker-link { font-size: .78rem; color: var(--muted); font-weight: 500; letter-spacing: .03em; text-decoration: none; padding: .22rem .6rem; border-radius: 4px; border: 1px solid transparent; transition: color .2s, background .2s, border-color .2s; flex-shrink: 0; }
 .ticker-link:hover { color: var(--coral); background: var(--coraldim); border-color: var(--border2); }
@@ -154,15 +159,14 @@ nav { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; height: 52px; displa
 
 .job-trigger { display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 1.4rem; gap: 1.25rem; user-select: none; }
 .job-left { flex: 1; min-width: 0; }
-.job-co { font-size: .62rem; font-weight: 700; color: var(--coral); letter-spacing: .12em; text-transform: uppercase; margin-bottom: .2rem; }
+.job-co { font-size: .72rem; font-weight: 700; color: var(--coral); letter-spacing: .1em; text-transform: uppercase; margin-bottom: .25rem; }
 .job-role { font-family: var(--serif); font-size: clamp(1rem,2vw,1.25rem); font-weight: 400; color: var(--text); line-height: 1.2; transition: color .2s; }
 .job.open .job-role { color: var(--coral2); }
 .job-right { display: flex; align-items: center; gap: .75rem; flex-shrink: 0; }
 .job-period { font-size: .7rem; color: var(--muted); background: var(--surface2); border: 1px solid var(--border); padding: .18rem .7rem; border-radius: 100px; white-space: nowrap; }
 .job.open .job-period { background: var(--coraldim); border-color: var(--border2); color: var(--coral2); }
-.job-chevron { width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--border); background: var(--bg3); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: .65rem; transition: background .2s, border-color .2s, color .2s, transform .35s cubic-bezier(.34,1.56,.64,1); }
-.job.open .job-chevron { background: var(--coral); color: #000; border-color: var(--coral); transform: none; }
-.job.open .job-chevron { content: "×"; }
+.job-chevron { width: 20px; height: 20px; border-radius: 50%; border: 1px solid var(--border); background: transparent; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: .55rem; transition: background .2s, border-color .2s, color .2s; flex-shrink: 0; }
+.job.open .job-chevron { background: var(--coral); color: #fff; border-color: var(--coral); }
 
 .job-body { max-height: 0; overflow: hidden; transition: max-height .45s cubic-bezier(.25,.46,.45,.94); }
 .job.open .job-body { max-height: 700px; }
@@ -185,7 +189,7 @@ nav { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; height: 52px; displa
 .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 4rem; align-items: start; }
 .about-left h2 { font-family: var(--serif); font-size: clamp(1.7rem,3vw,2.2rem); font-weight: 400; line-height: 1.15; margin-bottom: 1.25rem; }
 .about-left h2 em { font-style: italic; color: var(--coral); }
-.about-left p { font-size: .88rem; color: var(--muted); line-height: 1.85; margin-bottom: 1rem; max-width: 46ch; }
+.about-left p { font-size: .88rem; color: var(--muted); line-height: 1.85; margin-bottom: 1rem; max-width: 52ch; }
 .about-left p strong { color: var(--text); font-weight: 600; }
 .about-left p:last-child { margin-bottom: 0; }
 
@@ -201,7 +205,7 @@ nav { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; height: 52px; displa
 /* ═══════════════════════════════
    PHOTO STACK
 ═══════════════════════════════ */
-.photo-wrap { padding-bottom: 3rem; border-bottom: 1px solid var(--border); background: var(--bg2); margin: 0 -2.5rem; padding-left: 2.5rem; padding-right: 2.5rem; padding-top: 2.5rem; }
+.photo-wrap { padding-bottom: 1.75rem; border-bottom: 1px solid var(--border); background: var(--bg2); margin: 0 -2.5rem; padding-left: 2.5rem; padding-right: 2.5rem; padding-top: 2.5rem; }
 .photo-kicker { font-size: .68rem; font-weight: 700; color: var(--coral); letter-spacing: .14em; text-transform: uppercase; display: flex; align-items: center; gap: .5rem; margin-bottom: 2rem; }
 .photo-kicker::before { content: ''; display: inline-block; width: 14px; height: 2px; background: var(--coral); border-radius: 2px; }
 .photo-stack { position: relative; height: 360px; }
@@ -212,7 +216,7 @@ nav { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; height: 52px; displa
 /* ═══════════════════════════════
    BELIEF
 ═══════════════════════════════ */
-.belief { background: var(--coral); border-top: none; border-bottom: none; padding: 3rem 2.5rem; text-align: center; position: relative; overflow: hidden; }
+.belief { background: var(--coral); border-top: none; border-bottom: none; padding: clamp(2rem,5vw,3rem) clamp(1.25rem,4vw,2.5rem); text-align: center; position: relative; overflow: hidden; }
 .belief-quote { font-family: var(--serif); font-size: clamp(1.5rem,3vw,2.2rem); font-weight: 400; line-height: 1.4; color: #fff; }
 .belief-quote em { font-style: italic; color: rgba(255,255,255,.75); }
 
@@ -256,7 +260,7 @@ nav { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; height: 52px; displa
 .ww-heading { font-size: .68rem; font-weight: 700; color: var(--coral); letter-spacing: .14em; text-transform: uppercase; display: flex; align-items: center; gap: .5rem; margin-bottom: 1.5rem; }
 .ww-heading::before { content: ''; display: inline-block; width: 14px; height: 2px; background: var(--coral); border-radius: 2px; }
 .ww-grid { display: flex; flex-wrap: wrap; gap: .5rem; }
-.ww-pill { font-size: .78rem; font-weight: 500; color: var(--muted); background: var(--surface); border: 1px solid var(--border); padding: .38rem 1rem; border-radius: 100px; display: inline-flex; align-items: center; gap: .3rem; transition: background .2s, color .2s, border-color .2s, transform .15s; box-shadow: 0 1px 3px rgba(26,22,18,.05); }
+.ww-pill { font-size: .88rem; font-weight: 500; color: var(--muted); background: var(--surface); border: 1px solid var(--border); padding: .4rem 1.1rem; border-radius: 100px; display: inline-flex; align-items: center; gap: .3rem; transition: background .2s, color .2s, border-color .2s, transform .15s; box-shadow: 0 1px 3px rgba(26,22,18,.05); }
 .ww-pill:hover { background: var(--coraldim); color: var(--coral); border-color: var(--border2); transform: translateY(-2px); }
 .ww-pill::after { content: '↗'; font-size: .58rem; opacity: .4; }
 
@@ -275,7 +279,7 @@ nav { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; height: 52px; displa
 /* ═══════════════════════════════
    CONTACT
 ═══════════════════════════════ */
-.contact-wrap { padding: 2rem 0 4rem; border-top: 1px solid var(--border); margin-top: 0; }
+.contact-wrap { padding: 0 0 4rem; border-top: 1px solid var(--border); margin-top: 0; }
 .contact-top-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
 .contact-heading { font-family: var(--serif); font-size: clamp(2.4rem,5.5vw,4rem); font-weight: 400; line-height: 1.05; margin-bottom: .75rem; }
 .contact-heading em { font-style: italic; color: var(--coral); }
@@ -330,14 +334,6 @@ footer { max-width: 1100px; margin: 0 auto; padding: 1.25rem 2.5rem; text-align:
 body { animation: fadeIn .35s ease both; }
 
 /* Name lines — sequential reveal */
-.name-first, .name-main, .name-last {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: nameReveal .65s cubic-bezier(.25,.46,.45,.94) forwards;
-}
-.name-first { animation-delay: .1s; }
-.name-main  { animation-delay: .25s; }
-.name-last  { animation-delay: .4s; }
 @keyframes nameReveal {
   to { opacity: 1; transform: none; }
 }
@@ -526,12 +522,12 @@ body { animation: fadeIn .35s ease both; }
 .career-dark-wrap .job { background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.08); }
 .career-dark-wrap .job:hover { background: rgba(232,68,42,.1) !important; border-color: rgba(232,68,42,.3) !important; }
 .career-dark-wrap .job.open { background: rgba(232,68,42,.08) !important; border-color: var(--coral) !important; }
-.career-dark-wrap .job-co { color: var(--coral) !important; }
+.career-dark-wrap .job-co { color: var(--coral) !important; font-size: .72rem !important; }
 .career-dark-wrap .job-role { color: rgba(255,255,255,.88) !important; }
 .career-dark-wrap .job.open .job-role { color: var(--coral3) !important; }
 .career-dark-wrap .job-period { color: rgba(255,255,255,.5) !important; background: rgba(255,255,255,.06) !important; border-color: rgba(255,255,255,.1) !important; }
 .career-dark-wrap .job.open .job-period { background: rgba(232,68,42,.15) !important; border-color: rgba(232,68,42,.35) !important; color: var(--coral3) !important; }
-.career-dark-wrap .job-chevron { border-color: rgba(255,255,255,.12) !important; background: rgba(255,255,255,.05) !important; color: rgba(255,255,255,.5) !important; }
+.career-dark-wrap .job-chevron { border-color: rgba(255,255,255,.15) !important; background: transparent !important; color: rgba(255,255,255,.45) !important; width: 20px !important; height: 20px !important; font-size: .55rem !important; }
 .career-dark-wrap .job.open .job-chevron { background: var(--coral) !important; color: #fff !important; border-color: var(--coral) !important; }
 .career-dark-wrap .job-body-inner { border-color: rgba(255,255,255,.07) !important; background: rgba(0,0,0,.15) !important; }
 .career-dark-wrap .job-desc { color: rgba(255,255,255,.4) !important; }
@@ -541,6 +537,86 @@ body { animation: fadeIn .35s ease both; }
 .career-dark-wrap .job-bullets li strong { color: rgba(255,255,255,.92) !important; }
 .career-dark-wrap .job-bullets li::before { color: var(--coral) !important; }
 .career-dark-wrap .connector { color: rgba(255,255,255,.2) !important; }
+
+
+
+
+
+
+
+.testi-arrow:disabled { opacity: .2; pointer-events: none; cursor: not-allowed !important; }
+
+
+.nav-wordmark {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -.01em;
+  font-style: normal;
+}
+.nav-wordmark em {
+  font-style: normal;
+  color: var(--coral);
+}
+
+
+/* ── HERO NAME ── */
+.hero-name { font-family: var(--serif); font-weight: 400; letter-spacing: -.02em; margin-bottom: 1.75rem; }
+.name-first {
+  display: block;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  color: var(--ink);
+  font-style: normal;
+  line-height: 1.05;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: nameReveal .65s cubic-bezier(.25,.46,.45,.94) .1s forwards;
+}
+.name-main {
+  display: block;
+  font-size: clamp(4rem, 8vw, 6.5rem);
+  color: var(--coral);
+  font-style: italic;
+  line-height: .92;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: nameReveal .65s cubic-bezier(.25,.46,.45,.94) .25s forwards;
+}
+.name-last {
+  display: block;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  color: var(--ink);
+  font-style: normal;
+  line-height: 1.1;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: nameReveal .65s cubic-bezier(.25,.46,.45,.94) .4s forwards;
+}
+
+
+.hero-positioning {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 400;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: .75rem;
+  letter-spacing: -.01em;
+  line-height: 1.4;
+}
+
+
+.career-narrative {
+  font-size: .92rem;
+  color: rgba(255,255,255,.5);
+  line-height: 1.75;
+  max-width: 580px;
+  margin-bottom: 2rem;
+  font-style: italic;
+  border-left: 2px solid var(--coral);
+  padding-left: 1rem;
+}
 
 </style>
 </head>
@@ -552,7 +628,8 @@ body { animation: fadeIn .35s ease both; }
 
 <header>
   <nav>
-    <span class="nav-logo">MRA</span>
+    
+    <span class="nav-wordmark">Raacikh<em>.</em></span>
     <ul class="nav-links">
       <li><a href="#career">Experience</a></li>
       <li><a href="#about">About</a></li>
@@ -569,7 +646,7 @@ body { animation: fadeIn .35s ease both; }
       <p class="hero-eyebrow">Product Operations · Fintech · Web3</p>
       <span class="avail-badge"><span class="avail-dot"></span>Available for work</span>
     </div>
-    <div class="hero-name reveal">
+    <div class="hero-name">
       <span class="name-first">Muhammad</span>
       <span class="name-main">Raacikh</span>
       <span class="name-last">Asghar</span>
@@ -609,7 +686,7 @@ body { animation: fadeIn .35s ease both; }
       <!-- LinkedIn widget -->
       <div class="hcard">
         <p class="hcard-label">LinkedIn</p>
-        <p class="hcard-li-num">8,500+</p>
+        <p class="hcard-li-num counter" data-target="8500" data-suffix="+">0</p>
         <p class="hcard-li-label">Active voice in fintech &amp; ops</p>
         <p style="font-size:.62rem;color:var(--muted);margin-bottom:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600">Top post impressions</p>
         <div class="hcard-li-bar">
@@ -681,9 +758,10 @@ body { animation: fadeIn .35s ease both; }
       <span class="sec-kicker">Career</span>
       <span class="sec-meta">5 years · 3 companies · 2 continents</span>
     </div>
+    <p class="career-narrative reveal">Joined SadaPay as an Associate. Left as Manager of 80. In between: built the CX function from scratch, launched two card programmes, and saved $3M. Then took that playbook to the UK — and now to Web3.</p>
 
     <div class="job reveal" data-job style="border-color:var(--coral);border-left:3px solid var(--coral)">
-      <div class="job-trigger"><div class="job-left"><div class="job-co">ZAR <span style="font-size:.6rem;background:var(--coral);color:#000;padding:.1rem .4rem;border-radius:3px;margin-left:.4rem;vertical-align:middle;font-weight:700;letter-spacing:.06em">CURRENT</span></div><h2 class="job-role">Product Operations &amp; Growth Manager</h2></div><div class="job-right"><span class="job-period">Aug 2025 – Present</span><div class="job-chevron job-toggle">+</div></div></div>
+      <div class="job-trigger" role="button" tabindex="0" aria-expanded="false"><div class="job-left"><div class="job-co">ZAR <span style="font-size:.6rem;background:var(--coral);color:#000;padding:.1rem .4rem;border-radius:3px;margin-left:.4rem;vertical-align:middle;font-weight:700;letter-spacing:.06em">CURRENT</span></div><h2 class="job-role">Product Operations &amp; Growth Manager</h2></div><div class="job-right"><span class="job-period">Aug 2025 – Present</span><div class="job-chevron job-toggle">↓</div></div></div>
       <div class="job-body"><div class="job-body-inner">
         <p class="job-desc">a16z-backed USD stablecoin wallet — simplifying everyday payments &amp; dollar savings in emerging markets</p>
         <div class="job-pills"><span class="job-pill">Merchant Acquisition</span><span class="job-pill">Ambassador Programs</span><span class="job-pill">Stablecoin</span><span class="job-pill">Emerging Markets</span></div>
@@ -698,9 +776,9 @@ body { animation: fadeIn .35s ease both; }
     <div class="connector">↓</div>
 
     <div class="job reveal" data-job>
-      <div class="job-trigger"><div class="job-left"><div class="job-co">Jazari</div><h2 class="job-role">Product Operations Lead</h2></div><div class="job-right"><span class="job-period">Apr 2025 – Aug 2025</span><div class="job-chevron job-toggle">+</div></div></div>
+      <div class="job-trigger" role="button" tabindex="0" aria-expanded="false"><div class="job-left"><div class="job-co">Jazari</div><h2 class="job-role">Product Operations Lead</h2></div><div class="job-right"><span class="job-period">Apr 2025 – Aug 2025</span><div class="job-chevron job-toggle">↓</div></div></div>
       <div class="job-body"><div class="job-body-inner">
-        <p class="job-desc">UK-based remittance fintech targeting South Asian diaspora — cross-border transfers with embedded lending</p>
+        <p class="job-desc">Contract engagement · UK-based remittance fintech targeting South Asian diaspora — cross-border transfers with embedded lending</p>
         <div class="job-pills"><span class="job-pill">Debit Card</span><span class="job-pill">Regulatory Compliance</span><span class="job-pill">GTM Execution</span><span class="job-pill">Waitlist Funnel Analysis</span></div>
         <ul class="job-bullets">
           <li>Led the UK debit card launch end-to-end — product ops, regulatory compliance, vendor coordination, and GTM execution</li>
@@ -713,7 +791,7 @@ body { animation: fadeIn .35s ease both; }
     <div class="connector">↓</div>
 
     <div class="job reveal" data-job>
-      <div class="job-trigger"><div class="job-left"><div class="job-co">SadaPay</div><h2 class="job-role">Manager, Cards &amp; Business Operations</h2></div><div class="job-right"><span class="job-period">Mar 2023 – Mar 2025</span><div class="job-chevron job-toggle">+</div></div></div>
+      <div class="job-trigger" role="button" tabindex="0" aria-expanded="false"><div class="job-left"><div class="job-co">SadaPay</div><h2 class="job-role">Manager, Cards &amp; Business Operations</h2></div><div class="job-right"><span class="job-period">Mar 2023 – Mar 2025</span><div class="job-chevron job-toggle">↓</div></div></div>
       <div class="job-body"><div class="job-body-inner">
         <p class="job-desc">Pakistan's fastest-growing neobank — simplifying money management &amp; payments for millions</p>
         <div class="job-pills"><span class="job-pill">ACS Migration</span><span class="job-pill">Card Programme</span><span class="job-pill">Cost Optimisation</span><span class="job-pill">Courier Ops</span></div>
@@ -728,7 +806,7 @@ body { animation: fadeIn .35s ease both; }
     <div class="connector">↓</div>
 
     <div class="job reveal" data-job>
-      <div class="job-trigger"><div class="job-left"><div class="job-co">SadaPay</div><h2 class="job-role">Manager, Customer Experience</h2></div><div class="job-right"><span class="job-period">Jan 2022 – Mar 2023</span><div class="job-chevron job-toggle">+</div></div></div>
+      <div class="job-trigger" role="button" tabindex="0" aria-expanded="false"><div class="job-left"><div class="job-co">SadaPay</div><h2 class="job-role">Manager, Customer Experience</h2></div><div class="job-right"><span class="job-period">Jan 2022 – Mar 2023</span><div class="job-chevron job-toggle">↓</div></div></div>
       <div class="job-body"><div class="job-body-inner">
         <div class="job-pills"><span class="job-pill">Team Leadership</span><span class="job-pill">Hiring at Scale</span><span class="job-pill">QA Frameworks</span></div>
         <ul class="job-bullets">
@@ -741,7 +819,7 @@ body { animation: fadeIn .35s ease both; }
     <div class="connector">↓</div>
 
     <div class="job reveal" data-job>
-      <div class="job-trigger"><div class="job-left"><div class="job-co">SadaPay</div><h2 class="job-role">Team Lead, Customer Experience</h2></div><div class="job-right"><span class="job-period">Jan 2021 – Jan 2022</span><div class="job-chevron job-toggle">+</div></div></div>
+      <div class="job-trigger" role="button" tabindex="0" aria-expanded="false"><div class="job-left"><div class="job-co">SadaPay</div><h2 class="job-role">Team Lead, Customer Experience</h2></div><div class="job-right"><span class="job-period">Jan 2021 – Jan 2022</span><div class="job-chevron job-toggle">↓</div></div></div>
       <div class="job-body"><div class="job-body-inner">
         <div class="job-pills"><span class="job-pill">Intercom</span><span class="job-pill">Chat Automation</span><span class="job-pill">CSAT</span></div>
         <ul class="job-bullets">
@@ -754,7 +832,7 @@ body { animation: fadeIn .35s ease both; }
     <div class="connector">↓</div>
 
     <div class="job reveal" data-job>
-      <div class="job-trigger"><div class="job-left"><div class="job-co">SadaPay</div><h2 class="job-role">Associate, Customer Experience</h2></div><div class="job-right"><span class="job-period">Dec 2020 – Dec 2021</span><div class="job-chevron job-toggle">+</div></div></div>
+      <div class="job-trigger" role="button" tabindex="0" aria-expanded="false"><div class="job-left"><div class="job-co">SadaPay</div><h2 class="job-role">Associate, Customer Experience</h2></div><div class="job-right"><span class="job-period">Dec 2020 – Dec 2021</span><div class="job-chevron job-toggle">↓</div></div></div>
       <div class="job-body"><div class="job-body-inner">
         <div class="job-pills"><span class="job-pill">Chat Support</span><span class="job-pill">Reporting Automation</span></div>
         <ul class="job-bullets">
@@ -777,7 +855,7 @@ body { animation: fadeIn .35s ease both; }
         <h2>Five years of<br>building <em>what<br>didn't exist yet</em></h2>
         <p>I'm a <strong>Product &amp; Business Operations specialist</strong> who started on the frontlines of customer experience and worked my way up to owning card programmes, $3M cost saves, and international market launches.</p>
         <p>Most recently at <strong>ZAR</strong>, a $20M-funded stablecoin wallet backed by <strong>a16z, Dragonfly, Coinbase, and VanEck</strong>, with 200K+ users across 110+ countries, where I lead merchant growth and operations across emerging markets.</p>
-        <p>Five years at <strong>SadaPay</strong> — from early-stage chaos to 4 million users. I have managed teams of <strong>80+</strong>, launched card programmes in Pakistan and the UK, and operated across compliance, vendors, product, and growth simultaneously.</p>
+        <p>Five years at <strong>SadaPay</strong> — from early-stage chaos to 4 million users. I've managed teams of <strong>80+</strong>, launched card programmes in Pakistan and the UK, and operated across compliance, vendors, product, and growth simultaneously.</p>
         <p>Based in <strong>Lahore, Pakistan.</strong> Open to remote and hybrid roles globally.</p>
       </div>
       <div class="about-stats reveal reveal-children">
@@ -812,7 +890,7 @@ body { animation: fadeIn .35s ease both; }
 <!-- BELIEF -->
 <div class="belief">
   <div style="position:absolute;top:-2rem;left:2rem;font-family:var(--serif);font-size:16rem;color:rgba(255,77,46,.12);line-height:1;pointer-events:none;user-select:none">"</div><div style="max-width:620px;margin:0 auto;position:relative">
-    <p class="belief-quote">Ops isn't a support function.<br><em>It's the difference between a product that ships and one that scales.</em></p>
+    <p class="belief-quote">Ops isn't a support function.<br> <em>It's the difference between a product that ships and one that scales.</em></p>
   </div>
 </div>
 
@@ -824,20 +902,20 @@ body { animation: fadeIn .35s ease both; }
     <div class="testi-track-wrap">
       <div class="testi-track" id="testiTrack">
         <div class="testi-card active">
-          <p class="testi-quote">"Working with Raacikh was a game-changer. He's a creative problem-solver, a team rockstar, and a shining example of positivity and professionalism. Worked closely with him to deliver <em>high-impact strategic initiatives that helped save SadaPay millions of dollars annually.</em> Any team would be lucky to have him."</p>
-          <div class="testi-person"><img class="testi-avatar" src="images/photo_05.jpg" alt="Faizan Altaf"><div><div class="testi-name">Faizan Altaf</div><div class="testi-role">Growth @ Google</div><a href="https://www.linkedin.com/in/faizan-altaf/" target="_blank" class="testi-li">LinkedIn ↗</a></div></div>
-        </div>
-        <div class="testi-card">
-          <p class="testi-quote">"Raacikh was one of the earliest employees to join SadaPay and I cannot recommend him highly enough. He is an exceptional employee, an <em>empathetic leader and an irreplaceable asset.</em> Customers often specifically mention his name in their reviews."</p>
-          <div class="testi-person"><img class="testi-avatar" src="images/photo_06.jpg" alt="Asad Amjad"><div><div class="testi-name">Asad Amjad</div><div class="testi-role">Head of Marketing @ Fasset</div><a href="https://www.linkedin.com/in/asad-amjad-28a28050/" target="_blank" class="testi-li">LinkedIn ↗</a></div></div>
-        </div>
-        <div class="testi-card">
           <p class="testi-quote">"Raacikh has been with SadaPay since the very start. He is a <em>consistent performer and is really good at solving problems.</em> His exceptional stakeholder management skills has made it very easy for him and his entire team to be on the same page when resolving problems and achieving business goals."</p>
           <div class="testi-person"><img class="testi-avatar" src="images/photo_07.jpg" alt="Omer Salimullah"><div><div class="testi-name">Omer Salimullah</div><div class="testi-role">CEO @ SadaPay</div><a href="https://www.linkedin.com/in/omersalimullah/" target="_blank" class="testi-li">LinkedIn ↗</a></div></div>
         </div>
         <div class="testi-card">
           <p class="testi-quote">"SadaPay is best known for the <em>exceptional service we deliver through our Customer Experience team,</em> and Raacikh has been a key contributor in this area."</p>
           <div class="testi-person"><img class="testi-avatar" src="images/photo_08.jpg" alt="Brandon Timinsky"><div><div class="testi-name">Brandon Timinsky</div><div class="testi-role">Founder @ ZAR</div><a href="https://www.linkedin.com/in/tmnsky/" target="_blank" class="testi-li">LinkedIn ↗</a></div></div>
+        </div>
+        <div class="testi-card">
+          <p class="testi-quote">"Working with Raacikh was a game-changer. He's a creative problem-solver, a team rockstar, and a shining example of positivity and professionalism. Worked closely with him to deliver <em>high-impact strategic initiatives that helped save SadaPay millions of dollars annually.</em> Any team would be lucky to have him."</p>
+          <div class="testi-person"><img class="testi-avatar" src="images/photo_05.jpg" alt="Faizan Altaf"><div><div class="testi-name">Faizan Altaf</div><div class="testi-role">Growth @ Google</div><a href="https://www.linkedin.com/in/faizan-altaf/" target="_blank" class="testi-li">LinkedIn ↗</a></div></div>
+        </div>
+        <div class="testi-card">
+          <p class="testi-quote">"Raacikh was one of the earliest employees to join SadaPay and I cannot recommend him highly enough. He is an exceptional employee, an <em>empathetic leader and an irreplaceable asset.</em> Customers often specifically mention his name in their reviews."</p>
+          <div class="testi-person"><img class="testi-avatar" src="images/photo_06.jpg" alt="Asad Amjad"><div><div class="testi-name">Asad Amjad</div><div class="testi-role">Head of Marketing @ Fasset</div><a href="https://www.linkedin.com/in/asad-amjad-28a28050/" target="_blank" class="testi-li">LinkedIn ↗</a></div></div>
         </div>
       </div>
     </div>
@@ -861,7 +939,6 @@ body { animation: fadeIn .35s ease both; }
   <div class="tools-wrap">
     <p class="tools-kicker reveal">Tools I Work With</p>
     <div class="tools-grid reveal">
-      <a href="https://claude.com/product/claude-code" target="_blank" class="tool"><img src="data:image/png;base64,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" width="24" height="24" style="border-radius:5px;flex-shrink:0;object-fit:contain" alt="Claude Code">Claude Code</a>
       <a href="https://www.atlassian.com/software/jira" target="_blank" class="tool"><img src="images/tool_jira.png" width="24" height="24" style="border-radius:5px;flex-shrink:0;object-fit:contain" alt="JIRA">JIRA</a>
       <a href="https://mixpanel.com/home/" target="_blank" class="tool"><img src="data:image/png;base64,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" width="24" height="24" style="border-radius:5px;flex-shrink:0;object-fit:contain" alt="Mixpanel" style="background:rgba(120,86,255,.15);border-radius:4px;padding:2px">Mixpanel</a>
       <a href="https://www.notion.com/" target="_blank" class="tool"><img src="images/tool_notion.png" width="24" height="24" style="border-radius:5px;flex-shrink:0;object-fit:contain" alt="Notion">Notion</a>
@@ -869,6 +946,7 @@ body { animation: fadeIn .35s ease both; }
       <a href="https://www.zendesk.com/" target="_blank" class="tool"><img src="data:image/png;base64,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" width="24" height="24" style="border-radius:5px;flex-shrink:0;object-fit:contain" alt="Zendesk">Zendesk</a>
       <a href="https://www.tableau.com/" target="_blank" class="tool"><img src="data:image/png;base64,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" width="24" height="24" style="border-radius:5px;flex-shrink:0;object-fit:contain" alt="Tableau">Tableau</a>
       <a href="https://www.figma.com/" target="_blank" class="tool"><img src="images/tool_figma.png" width="24" height="24" style="border-radius:5px;flex-shrink:0;object-fit:contain" alt="Figma">Figma</a>
+      <a href="https://claude.com/product/claude-code" target="_blank" class="tool"><img src="data:image/png;base64,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" width="24" height="24" style="border-radius:5px;flex-shrink:0;object-fit:contain" alt="Claude Code">Claude Code</a>
     </div>
   </div>
 
@@ -879,8 +957,8 @@ body { animation: fadeIn .35s ease both; }
     </div>
     <div class="contact-top-row">
       <div>
-        <h2 class="contact-heading reveal">Ready to Build<br><em>Something Real?</em></h2>
-        <p class="contact-sub reveal">I'm drawn to early-stage fintechs and Web3 companies where operations are a competitive advantage, not an afterthought. If that sounds like your world — let's talk.</p>
+        <h2 class="contact-heading reveal">Building something in<br><em>fintech or Web3?</em></h2>
+        <p class="contact-sub reveal">I've scaled operations at three companies across two continents. I know what it takes to build the ops function from scratch — and I'm ready to do it again. If that sounds like your world, let's talk.</p>
       </div>
       <div class="reveal" style="padding-top:.5rem;flex-shrink:0">
         <a href="https://calendly.com/raacikh-asghar97/30minchat" target="_blank" class="calendly-btn">
@@ -907,7 +985,7 @@ body { animation: fadeIn .35s ease both; }
 
 <div class="footer-wrap">
   <footer>
-    <span class="footer-center">Designed &amp; built by hand &nbsp;·&nbsp; © 2026</span>
+    <span class="footer-center">Designed & built by hand &nbsp;·&nbsp; © 2026</span>
   </footer>
 </div>
 
@@ -928,22 +1006,21 @@ document.querySelectorAll('a,.tool,.about-stat,.job,.ww-pill,.contact-link,.cont
 });
 
 // PROGRESS
-const prog=document.getElementById('progress');
+const prog=document.getElementById('progress'); let progVisible=false;
 window.addEventListener('scroll',()=>{
   const scrollPct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
-  prog.style.width = scrollPct + '%';
+  if(!progVisible){progVisible=true;prog.style.opacity='1';} prog.style.width = scrollPct + '%';
 
   // Active nav with smooth transition
+  // Active nav — clear all first, then set active
+  document.querySelectorAll('.nav-links a[href^="#"]').forEach(a => a.classList.remove('active'));
   ['career','about','contact'].forEach(id => {
     const sec = document.getElementById(id);
     const a = document.querySelector(`.nav-links a[href="#${id}"]`);
     if (!sec || !a) return;
     const r = sec.getBoundingClientRect();
-    const isActive = r.top < window.innerHeight * .45 && r.bottom > window.innerHeight * .2;
-    if (isActive) {
+    if (r.top < window.innerHeight * .5 && r.bottom > 0) {
       a.classList.add('active');
-    } else {
-      a.classList.remove('active');
     }
   });
 },{passive:true});
@@ -953,6 +1030,18 @@ window.addEventListener('scroll',()=>{
   const n=document.querySelector('.hero-name');
   if(n) n.style.transform=`translateY(${window.scrollY*.06}px)`;
 },{passive:true});
+
+
+// KEYBOARD ACCESSIBILITY — career cards
+document.querySelectorAll('.job-trigger').forEach(trigger => {
+  trigger.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      trigger.click();
+      trigger.setAttribute('aria-expanded', trigger.closest('[data-job]').classList.contains('open'));
+    }
+  });
+});
 
 // SCROLL ANIMATIONS — orchestrated reveal system
 const ioConfig = { threshold: .07, rootMargin: '0px 0px -40px 0px' };
@@ -1019,12 +1108,12 @@ document.querySelectorAll('[data-job]').forEach(job=>{
     document.querySelectorAll('[data-job].open').forEach(j=>{
       j.classList.remove('open');
       const t=j.querySelector('.job-toggle');
-      if(t) t.textContent='+';
+      if(t) t.textContent='↓';
     });
     if(!isOpen){
       job.classList.add('open');
       const t=job.querySelector('.job-toggle');
-      if(t) t.textContent='×';
+      if(t) t.textContent='↓';
     }
   });
 });
@@ -1036,7 +1125,7 @@ document.querySelectorAll('.contact-copy').forEach(el=>{el.addEventListener('cli
 (function(){const lb=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap'),lbClose=document.getElementById('lbClose');if(!lb)return;document.querySelectorAll('.psi').forEach(item=>{const base=item.style.transform;item.addEventListener('mouseenter',()=>{item.style.transform=base+' scale(1.07)';});item.addEventListener('mouseleave',()=>{item.style.transform=base;});item.addEventListener('click',()=>{lbImg.src=item.dataset.src;lbCap.textContent=item.dataset.caption;lb.classList.add('open');document.body.style.overflow='hidden';});});function close(){lb.classList.remove('open');document.body.style.overflow='';setTimeout(()=>{lbImg.src='';},300);}lbClose.addEventListener('click',close);lb.addEventListener('click',e=>{if(e.target===lb)close();});document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});})();
 
 // TESTIMONIALS
-(function(){const track=document.getElementById('testiTrack');if(!track)return;const cards=track.querySelectorAll('.testi-card'),dots=document.querySelectorAll('.testi-dot'),prev=document.getElementById('testiPrev'),next=document.getElementById('testiNext');let cur=0;const total=cards.length;function goTo(idx){cards[cur].classList.remove('active');dots[cur].classList.remove('active');cur=idx;cards[cur].classList.add('active');dots[cur].classList.add('active');track.style.transform=`translateX(-${cur*(300+16)}px)`;prev.disabled=cur===0;next.disabled=cur===total-1;}next.addEventListener('click',()=>{if(cur<total-1)goTo(cur+1);});prev.addEventListener('click',()=>{if(cur>0)goTo(cur-1);});dots.forEach(d=>d.addEventListener('click',()=>goTo(parseInt(d.dataset.idx))));document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'&&cur<total-1)goTo(cur+1);if(e.key==='ArrowLeft'&&cur>0)goTo(cur-1);});let tx=0;track.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});track.addEventListener('touchend',e=>{const dx=tx-e.changedTouches[0].clientX;if(Math.abs(dx)>50){if(dx>0&&cur<total-1)goTo(cur+1);else if(dx<0&&cur>0)goTo(cur-1);}},{passive:true});})();
+(function(){const track=document.getElementById('testiTrack');if(!track)return;const cards=track.querySelectorAll('.testi-card'),dots=document.querySelectorAll('.testi-dot'),prev=document.getElementById('testiPrev'),next=document.getElementById('testiNext');let cur=0;const total=cards.length;function goTo(idx){cards[cur].classList.remove('active');dots[cur].classList.remove('active');cur=idx;cards[cur].classList.add('active');dots[cur].classList.add('active');track.style.transform=`translateX(-${cur*(300+16)}px)`;prev.disabled=cur===0;next.disabled=cur===total-1;}next.addEventListener('click',()=>{if(cur<total-1)goTo(cur+1);});prev.addEventListener('click',()=>{if(cur>0)goTo(cur-1);});dots.forEach(d=>d.addEventListener('click',()=>goTo(parseInt(d.dataset.idx))));document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'&&cur<total-1)goTo(cur+1);if(e.key==='ArrowLeft'&&cur>0)goTo(cur-1);});let tx=0;track.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});track.addEventListener('touchend',e=>{const dx=tx-e.changedTouches[0].clientX;if(Math.abs(dx)>35){if(dx>0&&cur<total-1)goTo(cur+1);else if(dx<0&&cur>0)goTo(cur-1);}},{passive:true});})();
 
 // TESTIMONIAL ENTRANCE
 const testiIO = new IntersectionObserver(entries => {
