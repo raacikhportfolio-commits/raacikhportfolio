@@ -75,7 +75,7 @@ nav { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; height: 52px; displa
 /* ═══════════════════════════════
    HERO
 ═══════════════════════════════ */
-.hero { padding: 2.5rem 0 3rem; border-bottom: 1px solid var(--border); }
+.hero { padding: 3rem 0 3rem; border-bottom: 1px solid var(--border); }
 
 /* Top row: eyebrow + status */
 .hero-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem; }
@@ -128,18 +128,12 @@ nav { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; height: 52px; displa
 
 /* Hero bottom ticker */
 .hero-ticker { border-top: 1px solid var(--border); padding-top: 1.25rem; overflow: hidden; }
-.ticker-row { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 5%, #000 90%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0%, #000 5%, #000 90%, transparent 100%); }
 .ticker-label { font-size: .68rem; font-weight: 700; color: var(--coral); letter-spacing: .14em; text-transform: uppercase; display: flex; align-items: center; gap: .5rem; margin-bottom: .85rem; }
 .ticker-label::before { content: ''; display: inline-block; width: 14px; height: 2px; background: var(--coral); border-radius: 2px; }
-.ticker-row { overflow: hidden; }
 .ticker-track { display: flex; gap: 2.5rem; white-space: nowrap; animation: ticker 18s linear infinite; }
-.ticker-item { font-size: .75rem; color: var(--dim); font-weight: 400; letter-spacing: .03em; }
 .ticker-link { font-size: .78rem; color: var(--muted); font-weight: 500; letter-spacing: .03em; text-decoration: none; padding: .22rem .6rem; border-radius: 4px; border: 1px solid transparent; transition: color .2s, background .2s, border-color .2s; flex-shrink: 0; }
 .ticker-link:hover { color: var(--coral); background: var(--coraldim); border-color: var(--border2); }
-.ticker-item b { color: var(--muted); font-weight: 500; }
 @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-.hero-ticker:hover .ticker-track { animation-play-state: paused; }
-
 /* ═══════════════════════════════
    SECTION HEADER
 ═══════════════════════════════ */
@@ -614,9 +608,51 @@ body { animation: fadeIn .35s ease both; }
   max-width: 580px;
   margin-bottom: 2rem;
   font-style: italic;
-  border-left: 2px solid var(--coral);
-  padding-left: 1rem;
 }
+
+.hero-rule {
+  width: 100%; height: 1px;
+  background: var(--border2);
+  margin: 1.75rem 0 1.25rem;
+}
+
+/* ── TICKER ── */
+.hero-ticker {
+  border-top: 1px solid var(--border);
+  padding-top: 1.25rem;
+  overflow: hidden;
+}
+.ticker-label {
+  font-size: .68rem; font-weight: 700; color: var(--coral);
+  letter-spacing: .14em; text-transform: uppercase;
+  display: flex; align-items: center; gap: .5rem;
+  margin-bottom: .85rem;
+}
+.ticker-label::before {
+  content: ''; display: inline-block;
+  width: 14px; height: 2px; background: var(--coral); border-radius: 2px;
+}
+.ticker-row {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 5%, #000 90%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 5%, #000 90%, transparent 100%);
+}
+.ticker-track {
+  display: flex;
+  gap: 2.5rem;
+  white-space: nowrap;
+  animation: ticker 18s linear infinite;
+}
+.hero-ticker:hover .ticker-track { animation-play-state: paused; }
+.ticker-link {
+  font-size: .78rem; color: var(--muted); font-weight: 500;
+  letter-spacing: .03em; text-decoration: none;
+  padding: .22rem .6rem; border-radius: 4px;
+  border: 1px solid transparent;
+  transition: color .2s, background .2s, border-color .2s;
+  flex-shrink: 0;
+}
+.ticker-link:hover { color: var(--coral); background: var(--coraldim); border-color: var(--border2); }
 
 </style>
 </head>
@@ -678,44 +714,23 @@ body { animation: fadeIn .35s ease both; }
 
       <!-- Stat: Activation -->
       <div class="hcard">
-        <p class="hcard-label">Activation rate</p>
+        <p class="hcard-label">Merchant activation · ZAR</p>
         <p class="hcard-stat-num counter" data-target="70" data-suffix="%+">0</p>
         <p class="hcard-stat-label">Merchant first-transaction completion at ZAR</p>
       </div>
-
-      <!-- LinkedIn widget -->
+      <!-- Stat: Users -->
       <div class="hcard">
-        <p class="hcard-label">LinkedIn</p>
-        <p class="hcard-li-num counter" data-target="8500" data-suffix="+">0</p>
-        <p class="hcard-li-label">Active voice in fintech &amp; ops</p>
-        <p style="font-size:.62rem;color:var(--muted);margin-bottom:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600">Top post impressions</p>
-        <div class="hcard-li-bar">
-          <div class="li-bar-item">
-            <div class="li-bar-track"><div class="li-bar-fill" data-w="1"></div></div>
-            <span>40K</span>
-          </div>
-          <div class="li-bar-item">
-            <div class="li-bar-track"><div class="li-bar-fill" data-w=".8"></div></div>
-            <span>32K</span>
-          </div>
-          <div class="li-bar-item">
-            <div class="li-bar-track"><div class="li-bar-fill" data-w=".6"></div></div>
-            <span>24K</span>
-          </div>
-          <div class="li-bar-item">
-            <div class="li-bar-track"><div class="li-bar-fill" data-w=".3"></div></div>
-            <span>12K</span>
-          </div>
-        </div>
+        <p class="hcard-label">Users scaled</p>
+        <p class="hcard-stat-num counter" data-target="4" data-suffix="M+">4M+</p>
+        <p class="hcard-stat-label">Helped grow SadaPay from zero to 4 million users</p>
       </div>
-
-      <!-- Card Programmes -->
+      <!-- Card Delivery -->
       <div class="hcard">
-        <p class="hcard-label">Card programmes</p>
-        <p class="hcard-stat-num" style="font-family:var(--serif);font-size:2.8rem;font-weight:400;color:var(--coral);line-height:1;letter-spacing:-.02em;margin-bottom:.25rem">2</p>
-        <p class="hcard-stat-label">Launched in Pakistan &amp; UK — from design to delivery</p>
+        <p class="hcard-label">Card delivery rate</p>
+        <p class="hcard-stat-num counter" data-target="95" data-suffix="%">0</p>
+        <p class="hcard-stat-label">Success rate via courier partnership at SadaPay</p>
       </div>
-      </div>
+    </div>
 
     <!-- Worked With Ticker -->
     <div class="hero-ticker reveal">
@@ -744,7 +759,6 @@ body { animation: fadeIn .35s ease both; }
         <a href="https://1link.net.pk/" target="_blank" class="ticker-link">1LINK ↗</a>
         <a href="https://www.nadra.gov.pk/" target="_blank" class="ticker-link">NADRA ↗</a>
         <a href="https://www.tcsexpress.com/" target="_blank" class="ticker-link">TCS ↗</a>
-      </div>
       </div>
       </div>
     </div>
