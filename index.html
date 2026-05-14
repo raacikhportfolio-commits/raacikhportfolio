@@ -189,7 +189,7 @@ nav { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; height: 52px; displa
 
 /* Stats right col */
 .about-stats { display: flex; flex-direction: column; gap: 1px; }
-.about-stat { background: var(--surface); border: 1px solid var(--border); padding: 1.25rem 1.4rem; display: grid; grid-template-columns: 5rem 1fr; gap: 1rem; align-items: baseline; transition: background .2s, border-color .2s, box-shadow .2s; border-radius: 0; box-shadow: 0 1px 3px rgba(26,22,18,.04); }
+.about-stat { background: var(--surface); border: 1px solid var(--border); padding: 1.25rem 1.4rem; display: grid; grid-template-columns: 6rem 1fr; gap: 1rem; align-items: center; transition: background .2s, border-color .2s, box-shadow .2s; border-radius: 0; box-shadow: 0 1px 3px rgba(26,22,18,.04); }
 .about-stat:first-child { border-radius: 10px 10px 0 0; }
 .about-stat:last-child { border-radius: 0 0 10px 10px; }
 .about-stat:hover { background: var(--surface2); border-color: var(--border2); box-shadow: 0 4px 16px rgba(232,68,42,.08); }
@@ -202,7 +202,7 @@ nav { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; height: 52px; displa
 .photo-wrap { padding-bottom: 1.75rem; border-bottom: 1px solid var(--border); background: var(--bg2); margin: 0 -2.5rem; padding-left: 2.5rem; padding-right: 2.5rem; padding-top: 2.5rem; }
 .photo-kicker { font-size: .68rem; font-weight: 700; color: var(--coral); letter-spacing: .14em; text-transform: uppercase; display: flex; align-items: center; gap: .5rem; margin-bottom: 2rem; }
 .photo-kicker::before { content: ''; display: inline-block; width: 14px; height: 2px; background: var(--coral); border-radius: 2px; }
-.photo-stack { position: relative; height: 360px; }
+.photo-stack { position: relative; height: 360px; display: flex; justify-content: center; }
 .psi { position: absolute; border-radius: 10px; overflow: hidden; border: 4px solid #fff; box-shadow: 0 8px 32px rgba(26,22,18,.2), 0 2px 8px rgba(26,22,18,.1); transition: transform .32s cubic-bezier(.34,1.56,.64,1), box-shadow .28s; cursor: none !important; }
 .psi img { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
 .psi:hover { box-shadow: 0 20px 56px rgba(26,22,18,.28), 0 4px 16px rgba(26,22,18,.12); z-index: 10 !important; }
@@ -238,9 +238,9 @@ nav { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; height: 52px; displa
 .testi-role { font-size: .7rem; color: rgba(245,240,232,.4); }
 .testi-li { display: inline-flex; align-items: center; gap: .25rem; font-size: .65rem; color: var(--coral3); opacity: .6; margin-top: .2rem; transition: opacity .2s; }
 .testi-card:hover .testi-li { opacity: 1; }
-.testi-.testi-dots { display: flex; gap: .45rem; align-items: center; }
-.testi-dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,.2); transition: background .2s, width .25s; cursor: none !important; }
-.testi-dot.active { background: var(--coral); width: 18px; border-radius: 3px; }
+.testi-
+.testi-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,.5); transition: background .2s, width .25s; cursor: none !important; flex-shrink: 0; display: block; }
+.testi-dot.active { background: var(--coral); width: 22px; border-radius: 4px; }
 .testi-arrows { display: flex; gap: .5rem; }
 .testi-arrow { width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(255,255,255,.15); background: transparent; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.4); font-size: .8rem; transition: border-color .2s, color .2s, background .2s; cursor: none !important; }
 .testi-arrow:hover { border-color: var(--coral3); color: var(--coral3); background: rgba(232,68,42,.12); }
@@ -777,6 +777,28 @@ html, body { overflow-x: hidden; max-width: 100vw; }
   .contact-top-row > div:last-child { flex-wrap: wrap !important; gap: .6rem !important; }
   .contact-top-row > div:last-child > div[style*="width:1px"] { display: none !important; }
   .contact-icon-link { width: 38px !important; height: 38px !important; }
+
+  /* M1. Section kickers — bigger on mobile */
+  .sec-kicker { font-size: .82rem !important; }
+  .kicker { font-size: .82rem !important; }
+  .testi-kicker { font-size: .82rem !important; }
+  .photo-kicker { font-size: .82rem !important; }
+
+  /* M2. About stats — padding so text doesn't touch border */
+  .about-stat { padding: 1rem 1.25rem !important; }
+  .about-stat-num { font-size: 1.8rem !important; }
+
+  /* M3. Photo stack — scroll animation + lightbox arrows handled in JS */
+  .photo-stack { height: 300px !important; }
+
+  /* M4. Testimonial dots — horizontal */
+  
+  
+
+  /* M5. Contact icons — transparent background, centered */
+  .contact-top-row > div:last-child { width: 100% !important; justify-content: center !important; flex-wrap: wrap !important; gap: .75rem !important; }
+  .contact-icon-link { background: transparent !important; border-color: transparent !important; }
+  .contact-icon-link svg rect[fill="#0A66C2"], .contact-icon-link svg rect[fill="#25D366"] { rx: 8; }
 }
 
 /* ═══════════════════════════════════════
@@ -831,8 +853,8 @@ html, body { overflow-x: hidden; max-width: 100vw; }
   width: 42px; height: 42px;
   border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
-  border: 1px solid var(--border);
-  background: var(--surface);
+  border: 1px solid transparent;
+  background: transparent;
   transition: transform .2s, border-color .2s, box-shadow .2s;
   flex-shrink: 0;
 }
@@ -843,6 +865,45 @@ html, body { overflow-x: hidden; max-width: 100vw; }
 }
 .contact-icon-link svg { width: 22px; height: 22px; }
 
+
+/* Photo stack entrance animation */
+@keyframes photoReveal {
+  from { opacity: 0; transform: translateY(30px) rotate(var(--rot)); }
+  to   { opacity: 1; transform: translateY(0) rotate(var(--rot)); }
+}
+
+
+.lb-arrow {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
+  color: #fff; font-size: 1.1rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s; cursor: none !important;
+  z-index: 9001;
+}
+.lb-arrow:hover { background: rgba(255,255,255,.25); }
+.lb-prev { left: 1.25rem; }
+.lb-next { right: 1.25rem; }
+.lb-arrow:disabled { opacity: .2; pointer-events: none; }
+
+.testi-dots {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: .45rem;
+  align-items: center;
+}
+.testi-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
 </style>
 </head>
 <body>
@@ -1075,10 +1136,10 @@ html, body { overflow-x: hidden; max-width: 100vw; }
   <div class="photo-wrap">
     <p class="photo-kicker reveal">Behind the Scenes</p>
     <div class="photo-stack reveal">
-      <div class="psi" style="left:2%;top:30px;transform:rotate(-5deg);z-index:2;width:200px;height:245px" data-caption="The Startup Operator" data-src="images/photo_01.jpg"><img src="images/photo_01.jpg" alt="The Startup Operator" style="object-position:center top"></div>
-      <div class="psi" style="left:24%;top:10px;transform:rotate(3deg);z-index:4;width:225px;height:205px" data-caption="SadaPay's CX Team · Company Retreat · Dubai '21" data-src="images/photo_02.jpg"><img src="images/photo_02.jpg" alt="Dubai retreat" style="object-position:center 25%"></div>
-      <div class="psi" style="left:48%;top:35px;transform:rotate(-2deg);z-index:3;width:210px;height:225px" data-caption="Birthday celebration at SadaPay '22" data-src="images/photo_03.jpg"><img src="images/photo_03.jpg" alt="SadaPay birthday" style="object-position:center 20%"></div>
-      <div class="psi" style="left:68%;top:15px;transform:rotate(5deg);z-index:1;width:200px;height:230px" data-caption="Solana Breakpoint '25 · Abu Dhabi · Representing ZAR" data-src="images/photo_04.jpg"><img src="images/photo_04.jpg" alt="Solana Breakpoint" style="object-position:center 8%"></div>
+      <div class="psi" style="left:8%;top:30px;transform:rotate(-5deg);z-index:2;width:200px;height:245px" data-caption="The Startup Operator" data-src="images/photo_01.jpg"><img src="images/photo_01.jpg" alt="The Startup Operator" style="object-position:center top"></div>
+      <div class="psi" style="left:28%;top:10px;transform:rotate(3deg);z-index:4;width:225px;height:205px" data-caption="SadaPay's CX Team · Company Retreat · Dubai '21" data-src="images/photo_02.jpg"><img src="images/photo_02.jpg" alt="Dubai retreat" style="object-position:center 25%"></div>
+      <div class="psi" style="left:50%;top:35px;transform:rotate(-2deg);z-index:3;width:210px;height:225px" data-caption="Birthday celebration at SadaPay '22" data-src="images/photo_03.jpg"><img src="images/photo_03.jpg" alt="SadaPay birthday" style="object-position:center 20%"></div>
+      <div class="psi" style="left:72%;top:15px;transform:rotate(5deg);z-index:1;width:200px;height:230px" data-caption="Solana Breakpoint '25 · Abu Dhabi · Representing ZAR" data-src="images/photo_04.jpg"><img src="images/photo_04.jpg" alt="Solana Breakpoint" style="object-position:center 8%"></div>
     </div>
   </div>
 </div>
@@ -1086,7 +1147,9 @@ html, body { overflow-x: hidden; max-width: 100vw; }
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lbClose">✕</button>
+  <button class="lb-arrow lb-prev" id="lbPrev">←</button>
   <img class="lightbox-img" id="lbImg" src="" alt="">
+  <button class="lb-arrow lb-next" id="lbNext">→</button>
   <p class="lightbox-caption" id="lbCap"></p>
 </div>
 
@@ -1231,6 +1294,40 @@ window.addEventListener('scroll',()=>{
 },{passive:true});
 
 
+
+// PHOTO STACK — scroll reveal animation
+(function() {
+  const stack = document.querySelector('.photo-stack');
+  if (!stack) return;
+  const photos = stack.querySelectorAll('.psi');
+  // Store base rotations
+  photos.forEach((p, i) => {
+    p.setAttribute('data-base-transform', p.style.transform);
+    p.style.opacity = '0';
+    p.style.transform = p.style.transform + ' translateY(30px)';
+  });
+  const stackIO = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      photos.forEach((p, i) => {
+        setTimeout(() => {
+          const base = p.getAttribute('data-base-transform');
+          p.style.transition = 'opacity .55s cubic-bezier(.16,1,.3,1), transform .55s cubic-bezier(.16,1,.3,1)';
+          p.style.opacity = '1';
+          p.style.transform = base;
+        }, i * 120);
+      });
+      stackIO.unobserve(e.target);
+    });
+  }, { threshold: 0.15 });
+  stackIO.observe(stack);
+})();
+
+// M4. Testimonials — touch swipe (already implemented, verify dots are horizontal)
+// Force dots to flex-direction row via JS as fallback
+const dotsEl = document.querySelector('.testi-dots');
+if (dotsEl) dotsEl.style.flexDirection = 'row';
+
 // KEYBOARD ACCESSIBILITY — career cards
 document.querySelectorAll('.job-trigger').forEach(trigger => {
   trigger.addEventListener('keydown', e => {
@@ -1324,7 +1421,9 @@ document.querySelectorAll('.contact-copy').forEach(el=>{el.addEventListener('cli
 (function(){const lb=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap'),lbClose=document.getElementById('lbClose');if(!lb)return;document.querySelectorAll('.psi').forEach(item=>{const base=item.style.transform;item.addEventListener('mouseenter',()=>{item.style.transform=base+' scale(1.07)';});item.addEventListener('mouseleave',()=>{item.style.transform=base;});item.addEventListener('click',()=>{lbImg.src=item.dataset.src;lbCap.textContent=item.dataset.caption;lb.classList.add('open');document.body.style.overflow='hidden';});});function close(){lb.classList.remove('open');document.body.style.overflow='';setTimeout(()=>{lbImg.src='';},300);}lbClose.addEventListener('click',close);lb.addEventListener('click',e=>{if(e.target===lb)close();});document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});})();
 
 // TESTIMONIALS
-(function(){const track=document.getElementById('testiTrack');if(!track)return;const cards=track.querySelectorAll('.testi-card'),dots=document.querySelectorAll('.testi-dot'),prev=document.getElementById('testiPrev'),next=document.getElementById('testiNext');let cur=0;const total=cards.length;function goTo(idx){cards[cur].classList.remove('active');dots[cur].classList.remove('active');cur=idx;cards[cur].classList.add('active');dots[cur].classList.add('active');const cw = track.querySelector(".testi-card") ? track.querySelector(".testi-card").offsetWidth + 16 : 316; track.style.transform=`translateX(-${cur*cw}px)`;prev.disabled=cur===0;next.disabled=cur===total-1;}next.addEventListener('click',()=>{if(cur<total-1)goTo(cur+1);});prev.addEventListener('click',()=>{if(cur>0)goTo(cur-1);});dots.forEach(d=>d.addEventListener('click',()=>goTo(parseInt(d.dataset.idx))));document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'&&cur<total-1)goTo(cur+1);if(e.key==='ArrowLeft'&&cur>0)goTo(cur-1);});let tx=0;track.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});track.addEventListener('touchend',e=>{const dx=tx-e.changedTouches[0].clientX;if(Math.abs(dx)>35){if(dx>0&&cur<total-1)goTo(cur+1);else if(dx<0&&cur>0)goTo(cur-1);}},{passive:true});})();
+(function(){const track=document.getElementById('testiTrack');if(!track)return;const cards=track.querySelectorAll('.testi-card'),dots=document.querySelectorAll('.testi-dot'),prev=document.getElementById('testiPrev'),next=document.getElementById('testiNext');let cur=0;const total=cards.length;function goTo(idx){cards[cur].classList.remove('active');dots[cur].classList.remove('active');cur=idx;cards[cur].classList.add('active');dots[cur].classList.add('active');const cw = track.querySelector(".testi-card") ? track.querySelector(".testi-card").offsetWidth + 16 : 316; track.style.transform=`translateX(-${cur*cw}px)`;prev.disabled=cur===0;next.disabled=cur===total-1;}next.addEventListener('click',()=>{if(cur<total-1)goTo(cur+1);});prev.addEventListener('click',()=>{if(cur>0)goTo(cur-1);});dots.forEach(d=>d.addEventListener('click',e=>{e.stopPropagation();goTo(parseInt(d.dataset.idx));}));
+// Make cards clickable to go next
+cards.forEach((card,idx)=>{card.addEventListener('click',()=>{if(idx>cur)goTo(Math.min(cur+1,total-1));else if(idx<cur)goTo(Math.max(cur-1,0));});});document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'&&cur<total-1)goTo(cur+1);if(e.key==='ArrowLeft'&&cur>0)goTo(cur-1);});let tx=0;track.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});track.addEventListener('touchend',e=>{const dx=tx-e.changedTouches[0].clientX;if(Math.abs(dx)>35){if(dx>0&&cur<total-1)goTo(cur+1);else if(dx<0&&cur>0)goTo(cur-1);}},{passive:true});})();
 
 // TESTIMONIAL ENTRANCE
 const testiIO = new IntersectionObserver(entries => {
