@@ -1412,7 +1412,16 @@ if (dotsEl) dotsEl.style.flexDirection = 'row';
 // TESTIMONIALS
 (function(){const track=document.getElementById('testiTrack');if(!track)return;const cards=track.querySelectorAll('.testi-card'),dots=document.querySelectorAll('.testi-dot'),prev=document.getElementById('testiPrev'),next=document.getElementById('testiNext');let cur=0;const total=cards.length;function goTo(idx){cards[cur].classList.remove('active');dots[cur].classList.remove('active');cur=idx;cards[cur].classList.add('active');dots[cur].classList.add('active');const cw = track.querySelector(".testi-card") ? track.querySelector(".testi-card").offsetWidth + 16 : 316; track.style.transform=`translateX(-${cur*cw}px)`;prev.disabled=cur===0;next.disabled=cur===total-1;}next.addEventListener('click',()=>{if(cur<total-1)goTo(cur+1);});prev.addEventListener('click',()=>{if(cur>0)goTo(cur-1);});dots.forEach(d=>d.addEventListener('click',e=>{e.stopPropagation();goTo(parseInt(d.dataset.idx));}));
 // Make cards clickable to go next
-cards.forEach((card,idx)=>{card.addEventListener('click',()=>{if(idx>cur)goTo(Math.min(cur+1,total-1));else if(idx<cur)goTo(Math.max(cur-1,0));});});document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'&&cur<total-1)goTo(cur+1);if(e.key==='ArrowLeft'&&cur>0)goTo(cur-1);});let tx=0;track.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});track.addEventListener('touchend',e=>{const dx=tx-e.changedTouches[0].clientX;if(Math.abs(dx)>35){if(dx>0&&cur<total-1)goTo(cur+1);else if(dx<0&&cur>0)goTo(cur-1);}},{passive:true});})();
+cards.forEach((card,idx)=>{card.addEventListener('click',()=>{if(idx>cur)goTo(Math.min(cur+1,total-1));else if(idx<cur)goTo(Math.max(cur-1,0));});});document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'&&cur<total-1)goTo(cur+1);if(e.key==='ArrowLeft'&&cur>0)goTo(cur-1);});let tx=0;track.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});track.addEventListener('touchend',e=>{const dx=tx-e.changedTouches[0].clientX;if(Math.abs(dx)>35){if(dx>0&&cur<total-1)goTo(cur+1);else if(dx<0&&cur>0)goTo(cur-1);}},{passive:true});
+// Reset to first card on load
+// Force first card on load — disable transition briefly
+track.style.transition='none';
+track.style.transform='translateX(0)';
+prev.disabled=true;
+next.disabled=false;
+cards.forEach((c,i)=>{ c.classList.remove('active'); if(i===0) c.classList.add('active'); });
+dots.forEach((d,i)=>{ d.classList.remove('active'); if(i===0) d.classList.add('active'); });
+setTimeout(()=>{ track.style.transition=''; },50);})();
 
 // TESTIMONIAL ENTRANCE
 const testiIO = new IntersectionObserver(entries => {
@@ -1502,7 +1511,16 @@ next.addEventListener('click',()=>{if(cur<total-1)goTo(cur+1);});prev.addEventLi
 dots.forEach(d=>d.addEventListener('click',e=>{e.stopPropagation();goTo(parseInt(d.dataset.idx));}));
 cards.forEach((card,idx)=>{card.addEventListener('click',()=>{if(idx>cur)goTo(Math.min(cur+1,total-1));else if(idx<cur)goTo(Math.max(cur-1,0));});});
 document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'&&cur<total-1)goTo(cur+1);if(e.key==='ArrowLeft'&&cur>0)goTo(cur-1);});
-let tx=0;track.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});track.addEventListener('touchend',e=>{const dx=tx-e.changedTouches[0].clientX;if(Math.abs(dx)>35){if(dx>0&&cur<total-1)goTo(cur+1);else if(dx<0&&cur>0)goTo(cur-1);}},{passive:true});})();
+let tx=0;track.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});track.addEventListener('touchend',e=>{const dx=tx-e.changedTouches[0].clientX;if(Math.abs(dx)>35){if(dx>0&&cur<total-1)goTo(cur+1);else if(dx<0&&cur>0)goTo(cur-1);}},{passive:true});
+// Reset to first card on load
+// Force first card on load — disable transition briefly
+track.style.transition='none';
+track.style.transform='translateX(0)';
+prev.disabled=true;
+next.disabled=false;
+cards.forEach((c,i)=>{ c.classList.remove('active'); if(i===0) c.classList.add('active'); });
+dots.forEach((d,i)=>{ d.classList.remove('active'); if(i===0) d.classList.add('active'); });
+setTimeout(()=>{ track.style.transition=''; },50);})();
 
 // ACCORDION
 document.querySelectorAll('[data-job]').forEach(job=>{
@@ -1529,6 +1547,16 @@ document.querySelectorAll('.contact-copy').forEach(el=>{el.addEventListener('cli
 
 // MAGNETIC
 document.querySelectorAll('.mag').forEach(btn=>{btn.addEventListener('mousemove',e=>{const r=btn.getBoundingClientRect();btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.18}px)`;});btn.addEventListener('mouseleave',()=>{btn.style.transform='';});});
+
+// Reset testimonials to card 1 on every page load
+window.addEventListener('load', () => {
+  const t = document.getElementById('testiTrack');
+  if (t) {
+    t.style.transition = 'none';
+    t.style.transform = 'translateX(0)';
+    setTimeout(() => { t.style.transition = ''; }, 100);
+  }
+});
 
 // SCROLL ANIMATIONS
 const ioConfig={threshold:.07,rootMargin:'0px 0px -40px 0px'};
